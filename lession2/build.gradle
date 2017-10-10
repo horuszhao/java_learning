@@ -1,0 +1,49 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.7.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'jetty'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+//ext['jetty.version'] = '9.4.5.v20170502'
+
+repositories {
+	maven {
+		url "http://maven.aliyun.com/nexus/content/groups/public/" // 这个仓库好，下载jar包的速度超级快
+	}
+	//mavenLocal()
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')
+//	{
+//		exclude module:'spring-boot-starter-tomcat'
+//
+//	}
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+
+jettyRun{
+	httpPort = 8080
+	reload = "automatic"
+	scanIntervalSeconds=1
+	contextPath=''
+}
