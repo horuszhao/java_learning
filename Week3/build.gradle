@@ -20,30 +20,26 @@ group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
-//ext['jetty.version'] = '9.4.5.v20170502'
+ext['jetty.version'] = '9.4.5.v20170502'
 
 repositories {
-	maven {
-		url "http://maven.aliyun.com/nexus/content/groups/public/" // 这个仓库好，下载jar包的速度超级快
-	}
+//	maven {
+//		url "http://maven.aliyun.com/nexus/content/groups/public/" // 这个仓库好，下载jar包的速度超级快
+//	}
 	//mavenLocal()
 	mavenCentral()
 }
 
+//configurations {
+//	compile.exclude module: "spring-boot-starter-tomcat"
+//}
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
-//	{
-//		exclude module:'spring-boot-starter-tomcat'
-//
-//	}
+	compile("org.springframework.boot:spring-boot-starter-web")
+	{
+		exclude group:'org.springframework.boot',module:'spring-boot-starter-tomcat'
+	}
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile("org.springframework.boot:spring-boot-starter-jetty")
 }
 
-
-jettyRun{
-	httpPort = 8080
-	reload = "automatic"
-	scanIntervalSeconds=1
-	contextPath=''
-}
