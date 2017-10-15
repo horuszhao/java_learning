@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lombokstudy.iml" filepath="$PROJECT_DIR$/.idea/modules/lombokstudy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lombokstudy_main.iml" filepath="$PROJECT_DIR$/.idea/modules/lombokstudy_main.iml" group="lombokstudy" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lombokstudy_test.iml" filepath="$PROJECT_DIR$/.idea/modules/lombokstudy_test.iml" group="lombokstudy" />
+    </modules>
+  </component>
+</project>

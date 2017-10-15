@@ -1,0 +1,18 @@
+group 'com.javalearning.lombokstudy'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.projectlombok', name: 'lombok', version:'1.16.18'
+//    compile group: 'com.github.peichhorn', name: 'lombok-pg', version: '0.11.3'
+}
