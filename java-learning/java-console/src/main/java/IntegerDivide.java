@@ -1,5 +1,6 @@
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.NumberFormat;
 
 /**
  * @author:zhaoyunxiang
@@ -11,5 +12,15 @@ public class IntegerDivide {
         Integer b = 30;
         BigDecimal divide = BigDecimal.valueOf(a).divide(BigDecimal.valueOf(b), 0, RoundingMode.UP);
         System.out.println(divide);
+
+        String s = bigDecimalToPercentString(BigDecimal.valueOf(0.322345));
+        System.out.println(s);
+    }
+
+    public static String bigDecimalToPercentString(BigDecimal b){
+        NumberFormat percent = NumberFormat.getPercentInstance();
+        percent.setMaximumFractionDigits(2);
+        return percent.format(b);
+
     }
 }

@@ -17,5 +17,8 @@ public class JodaTest2 {
 
         DateTime dt3 = new DateTime(2019,1,1,0,0);
         System.out.println(dt3.toDate());
+
+        DateTime dt4 = new DateTime(2019,2,28,0,0);
+        System.out.println(dt4.plusMonths(1).toString("yyyy-MM-dd"));
     }
 }

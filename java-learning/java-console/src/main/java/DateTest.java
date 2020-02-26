@@ -1,4 +1,5 @@
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -17,5 +18,10 @@ public class DateTest {
         LocalDateTime ldt = LocalDateTime.ofInstant(instant, ZoneId.of("Asia/Shanghai"));
         String format = weekDateFormatter.format(ldt);
         System.out.println(format);
+
+        LocalDate ld = LocalDate.of(2019,2,28);
+        System.out.println(ld);
+        ld = ld.plusMonths(1);
+        System.out.println(ld);
     }
 }

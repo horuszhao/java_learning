@@ -29,5 +29,11 @@ public class JodaTest {
         System.out.println("----------");
         Days days3 = Days.daysBetween(start, end).dividedBy(3);
         System.out.println("end");
+
+        System.out.println("----------");
+        DateTime start1 = new DateTime(2020, 1, 1, 0, 0);
+        DateTime end1 = start1.plusYears(1).plusDays(-1);
+        System.out.println(start1.toDate());
+        System.out.println(end1.toDate());
     }
 }
