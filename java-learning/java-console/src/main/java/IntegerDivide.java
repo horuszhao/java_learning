@@ -15,6 +15,9 @@ public class IntegerDivide {
 
         String s = bigDecimalToPercentString(BigDecimal.valueOf(0.322345));
         System.out.println(s);
+
+        System.out.println(Integer.valueOf("0500"));
+
     }
 
     public static String bigDecimalToPercentString(BigDecimal b){

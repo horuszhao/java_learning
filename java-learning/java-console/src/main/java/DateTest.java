@@ -23,5 +23,12 @@ public class DateTest {
         System.out.println(ld);
         ld = ld.plusMonths(1);
         System.out.println(ld);
+
+        Date d1 = new Date(2020,6,7);
+        Date d2 = new Date(2020,6,9);
+        Date d3 = new Date(2020,6,11);
+        System.out.println(d2.compareTo(d1));
+        System.out.println(d2.compareTo(d2));
+        System.out.println(d2.compareTo(d3));
     }
 }

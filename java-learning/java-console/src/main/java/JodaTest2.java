@@ -1,5 +1,7 @@
 import org.joda.time.DateTime;
 import org.joda.time.Days;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 /**
  * @author:zhaoyunxiang
@@ -20,5 +22,8 @@ public class JodaTest2 {
 
         DateTime dt4 = new DateTime(2019,2,28,0,0);
         System.out.println(dt4.plusMonths(1).toString("yyyy-MM-dd"));
+
+        DateTime now = DateTime.parse("2020-04-02 09:23:43", DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss"));
+        System.out.println(now.toDate());
     }
 }
