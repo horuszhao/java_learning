@@ -13,6 +13,7 @@ sourceCompatibility = 1.8
 repositories {
     mavenCentral()
 }
+apply plugin: 'application'
 
 //task writeNewPom {
 //    pom {
@@ -28,6 +29,16 @@ repositories {
 //        }
 //    }.writeTo("pom.xml")
 //}
+
+applicationDefaultJvmArgs = [
+        '-Xms10G -Xmx10G',
+        '-XX:ReservedCodeCacheSize=256m -XX:InitialCodeCacheSize=256m',
+        '-XX:+UnlockExperimentalVMOptions -XX:+UseZGC',
+        '-XX:ConcGCThreads=2 -XX:ParallelGCThreads=6',
+        '-XX:ZCollectionInterval=120 -XX:ZAllocationSpikeTolerance=5',
+        '-XX:+UnlockDiagnosticVMOptions -XX:-ZProactive',
+        '-Xlog:safepoint,classhisto*=trace,age*,gc*=info:file=/opt/logs/logs/gc-%t.log:time,tid,tags:filecount=5,filesize=50m',
+]
 
 dependencies {
     compile group: 'joda-time', name: 'joda-time',version: '2.10.4'

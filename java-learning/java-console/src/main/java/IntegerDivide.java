@@ -11,13 +11,12 @@ public class IntegerDivide {
         Integer a = 100;
         Integer b = 30;
         BigDecimal divide = BigDecimal.valueOf(a).divide(BigDecimal.valueOf(b), 0, RoundingMode.UP);
-        System.out.println(divide);
+        System.out.println(divide.intValue());
 
         String s = bigDecimalToPercentString(BigDecimal.valueOf(0.322345));
         System.out.println(s);
 
         System.out.println(Integer.valueOf("0500"));
-
     }
 
     public static String bigDecimalToPercentString(BigDecimal b){
